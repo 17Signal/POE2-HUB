@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #050506;
+  color: #ede6d8;
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-poe {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(212, 179, 93, 0.08), transparent 34%),
+    radial-gradient(circle at 18% 20%, rgba(192, 107, 42, 0.06), transparent 24%),
+    linear-gradient(180deg, #0a0908 0%, #060607 42%, #040405 100%);
+}
+
+.app-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.015), transparent 25%),
+    linear-gradient(180deg, rgba(255, 209, 132, 0.035), transparent 28%);
+  mask-image: radial-gradient(circle at top, black 30%, transparent 80%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
+}
+
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@layer components {
+  .poe-panel {
+    @apply rounded-[28px] border border-poe-border bg-poe-panel shadow-poe;
+  }
+
+  .poe-panel-muted {
+    @apply rounded-[24px] border border-poe-border bg-poe-panel-2 shadow-poe-soft;
+  }
+
+  .hero-panel {
+    @apply poe-panel relative;
+    background:
+      linear-gradient(135deg, rgba(255, 225, 160, 0.035), transparent 38%),
+      linear-gradient(180deg, rgba(18, 16, 15, 0.96) 0%, rgba(11, 11, 12, 0.98) 100%);
+  }
+
+  .hero-note {
+    @apply rounded-[20px] border border-poe-border bg-black/30 p-5 backdrop-blur-sm;
+  }
+
+  .group-panel {
+    @apply poe-panel;
+  }
+
+  .site-card {
+    @apply flex h-full flex-col justify-between rounded-[22px] border border-poe-border bg-poe-panel-2 p-5 shadow-poe-soft transition;
+  }
+
+  .site-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(212, 179, 93, 0.55);
+  }
+
+  .poe-button {
+    @apply inline-flex items-center justify-center rounded-full border border-poe-gold bg-poe-gold px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-[#20160d] transition hover:brightness-110;
+  }
+
+  .poe-button-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-poe-border bg-transparent px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-poe-ash transition hover:border-poe-gold hover:text-poe-gold;
+  }
+}
+
+.hero-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.38em;
+  font-size: 0.72rem;
+  color: #d89a58;
+}

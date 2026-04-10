@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.superpowers/
+*.tsbuildinfo
+poe2-aggregator-dist.zip
+poe2-aggregator-offline.zip
+vite.config.js
+vite.config.d.ts
+.DS_Store
+Thumbs.db
