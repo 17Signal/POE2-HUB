@@ -57,17 +57,6 @@ a {
   mask-image: radial-gradient(circle at top, black 30%, transparent 80%);
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
-}
-
-@media (max-width: 960px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @layer components {
   .poe-panel {
     @apply rounded-[28px] border border-poe-border bg-poe-panel shadow-poe;
@@ -82,10 +71,6 @@ a {
     background:
       linear-gradient(135deg, rgba(255, 225, 160, 0.035), transparent 38%),
       linear-gradient(180deg, rgba(18, 16, 15, 0.96) 0%, rgba(11, 11, 12, 0.98) 100%);
-  }
-
-  .hero-note {
-    @apply rounded-[20px] border border-poe-border bg-black/30 p-5 backdrop-blur-sm;
   }
 
   .group-panel {

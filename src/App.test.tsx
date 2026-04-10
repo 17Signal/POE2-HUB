@@ -29,4 +29,11 @@ describe('App', () => {
       expect(link).toHaveAttribute('target', '_blank');
     });
   });
+
+  it('drops the quick-entry and maintenance copy blocks', () => {
+    render(<App />);
+
+    expect(screen.queryByText('快速入口')).not.toBeInTheDocument();
+    expect(screen.queryByText('维护说明')).not.toBeInTheDocument();
+  });
 });

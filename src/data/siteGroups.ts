@@ -57,18 +57,6 @@ export const siteGroups: SiteGroup[] = [
     ]
   },
   {
-    id: 'reference',
-    title: '数据资料',
-    description: '技能、物品、机制与数据库信息集中查看。',
-    links: [
-      {
-        name: 'PoE2DB',
-        url: 'https://poe2db.tw/',
-        description: '常用的 PoE2 数据库、物品与机制查询站。'
-      }
-    ]
-  },
-  {
     id: 'community',
     title: '社区论坛',
     description: '快速进入中文与地区社区，补充资讯和讨论视角。',
@@ -87,6 +75,18 @@ export const siteGroups: SiteGroup[] = [
         name: 'Caimogu Circle',
         url: 'https://www.caimogu.cc/circle/449.html',
         description: '菜蘑菇 PoE2 社区资讯、帖子与中文讨论入口。'
+      }
+    ]
+  },
+  {
+    id: 'reference',
+    title: '数据资料',
+    description: '技能、物品、机制与数据库信息集中查看。',
+    links: [
+      {
+        name: 'PoE2DB',
+        url: 'https://poe2db.tw/',
+        description: '常用的 PoE2 数据库、物品与机制查询站。'
       }
     ]
   }
