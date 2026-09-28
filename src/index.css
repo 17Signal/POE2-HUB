@@ -84,7 +84,7 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 }
 .category-links { display: flex; gap: 8px; }
 .category-links a { min-height: 44px; display: flex; align-items: center; gap: 9px; padding: 0 15px; border-radius: 6px; font-size: 13px; color: #bcbdb6; transition: color .18s, background .18s; }
-.category-links a:first-child { margin-left: -15px; }
+.category-links a:focus-visible { outline-offset: -2px; }
 .category-links svg { width: 16px; height: 16px; color: #a99773; }
 .category-links a:hover, .category-links a:focus-visible { color: #ead4a7; background: #cdb2770d; }
 .category-count { font-size: 10px; color: #84867e; font-variant-numeric: tabular-nums; }
@@ -164,9 +164,7 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
   .hero-description span { margin-left: 0; }
   .category-nav { min-height: 57px; }
   .category-links { width: 100%; gap: 0; justify-content: space-between; }
-  .category-links a { gap: 6px; padding: 0 8px; font-size: 12px; }
-  .category-links a:first-child { margin-left: -8px; }
-  .category-links a:last-child { margin-right: -8px; }
+  .category-links a { gap: 6px; padding: 0 4px; font-size: 12px; }
   .category-count { display: none; }
   .site-groups { gap: 25px; padding: 24px 0 28px; }
   .group-heading { flex-wrap: wrap; gap: 7px 14px; margin-bottom: 12px; }
