@@ -24,16 +24,27 @@ describe('App', () => {
     expect(cards.length).toBeGreaterThan(0);
 
     cards.forEach((card) => {
-      const link = within(card).getByRole('link', { name: '前往站点' });
+      const siteName = within(card).getByRole('heading', { level: 3 }).textContent;
+      const link = within(card).getByRole('link', { name: `${siteName}（在新标签页打开）` });
       expect(link).toHaveAttribute('href');
       expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+      expect(link).toContainElement(within(card).getByRole('heading', { level: 3 }));
     });
   });
 
-  it('drops the quick-entry and maintenance copy blocks', () => {
+  it('links every category to its section on the same page', () => {
     render(<App />);
 
-    expect(screen.queryByText('快速入口')).not.toBeInTheDocument();
-    expect(screen.queryByText('维护说明')).not.toBeInTheDocument();
+    const navigation = screen.getByRole('navigation', { name: '分类跳转' });
+    const links = within(navigation).getAllByRole('link');
+    expect(links).toHaveLength(4);
+    links.forEach((link) => {
+      const href = link.getAttribute('href')!;
+      expect(href).toMatch(/^#/);
+      const section = document.getElementById(href.slice(1));
+      expect(section).toBeInTheDocument();
+      expect(section).toHaveAttribute('aria-labelledby');
+    });
   });
 });

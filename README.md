@@ -34,10 +34,15 @@ PoE2 HUB 是一个《流放之路 2》常用入口聚合页，用来集中整理
 
 ## 技术栈
 
+页面支持桌面和手机布局、整卡跳转、顶部分类导航与键盘操作。
+字体与 SVG 图标随站点一同部署，不依赖第三方字体或图标服务。
+
 - Vite
 - React
 - TypeScript
 - Tailwind CSS
+
+品牌字体 Cinzel 使用 SIL Open Font License 1.1，许可证见 `public/fonts/OFL-Cinzel.txt`，随站点一同发布。
 
 ## 说明
 

@@ -1,4 +1,5 @@
 import type { SiteLink } from '../data/siteGroups';
+import { Icon } from './Icon';
 
 type SiteLinkCardProps = {
   site: SiteLink;
@@ -14,16 +15,19 @@ function getHostname(url: string) {
 
 export function SiteLinkCard({ site }: SiteLinkCardProps) {
   return (
-    <article className="site-card">
-      <div className="space-y-3">
-        <div className="space-y-1">
-          <h3 className="font-poe text-lg tracking-[0.12em] text-poe-gold">{site.name}</h3>
-          <p className="text-xs uppercase tracking-[0.2em] text-poe-ember">{getHostname(site.url)}</p>
+    <article>
+      <a className={`site-card accent-${site.accent}`} href={site.url} target="_blank" rel="noopener noreferrer"
+        aria-label={`${site.name}（在新标签页打开）`}>
+        <span className="site-icon"><Icon name={site.icon} /></span>
+        <div className="site-content">
+          <div className="site-title-row">
+            <h3>{site.name}</h3>
+            <span className="language-tag">{site.language}</span>
+          </div>
+          <p className="site-hostname">{getHostname(site.url)}</p>
         </div>
-        <p className="text-sm leading-6 text-poe-ash">{site.description}</p>
-      </div>
-      <a className="poe-button mt-6" href={site.url} target="_blank" rel="noreferrer">
-        前往站点
+        <Icon name="external" className="site-arrow" />
+        <p className="site-description">{site.description}</p>
       </a>
     </article>
   );
